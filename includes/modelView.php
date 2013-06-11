@@ -26,11 +26,11 @@ class ModelView{
 		$sHTML .= '<div class="shell">
 				   <div id="pageContent"><h1>'.$oMake-> MakeName.'</h1>
 				   <h2>'.$oModel-> ModelName.'</h2>
-				   <h3>'.$oModel-> Price.'</h3>
+				   <h3>$'.$oModel-> Price.'</h3><a href="">Add To Cart</a>
 				   <p>'.$oModel-> Description.'</p>
 				   </div><!-- end of page content -->
 				   <div id="pageImage">
-                    <img src="600x300.png" height="300px" width="600px" alt="" />
+                    <img src="'.$oModel-> Photopath.'" height="300px" width="600px" alt="" />
 	                </div>
 	                <div id="pluscart"></div> <!-- PLACHOLDER --> 
 	                <div id="clear"></div>
@@ -41,7 +41,6 @@ class ModelView{
 
 	}
 
-	
 
 }
 
