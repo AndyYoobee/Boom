@@ -1,0 +1,107 @@
+body{padding:0;margin:0;font:13px Arial,Helvetica,Garuda,sans-serif;*font-size:small;*font:x-small;}
+h1,h2,h3,h4,h5,h6,ul,li,em,strong,pre,code{padding:0;margin:0;line-height:1em;font-size:100%;font-weight:normal;font-style: normal;}
+table{font-size:inherit;font:100%;}
+ul{list-style:none;}
+img{border:0;}
+p{margin:1em 0;}
+
+#container{
+	width: 960px;
+	margin: auto;
+
+}
+
+#navigation{
+	height: 50px;
+	margin-top: 25px;
+	/*border: 1px red solid;*/
+	width: 960px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	/*border-bottom: 3px yellow solid;*/
+	background-color: #383838; /*to change eventually*/
+}
+#navigation li{
+	float: left;
+	display: inline-block;
+	line-height: 20px;
+	font-size: 18px;
+	margin: 15px;
+	color: #E0A500;
+	/*border: 1px red solid;*/
+}
+#navigation a{
+	text-decoration: none;
+	color: #E0A500;
+	} 
+
+#logo{
+	width: 100px;
+	height: 40px;
+	/*border: 1px green solid;*/
+	float: left;
+	margin: 5px 50px 5px 30px;
+}
+
+#Login a{
+	width: 100px;
+	height: 20px;
+	text-align: center;
+	margin: 15px;
+	float: right;
+	/*border: 1px yellow solid;*/
+
+}
+
+
+#main{
+	width: 960px;
+	/*border: 1px red solid;*/
+	margin-top: 25px;
+	/*background-color: #383838;*/
+}
+.pageContent{
+	/*border: 1px red solid;*/
+	height: 300px;
+	width: 275px;
+	margin: 25px 25px 0px 25px;
+	float: left;
+}
+.pageImage{float: left;	margin: 25px 0 0 0;}
+.pageContent a{
+	/*outline: 1px red solid;*/
+	float: left;
+	color: #E0A500;
+	font-size: 15px;
+	margin: 15px 0 15px 15px;
+	text-decoration: none;
+}
+.pageContent a:hover{
+	text-decoration: underline;
+}
+.shell{
+	height: 350px;
+	width: 960px;
+	background-color: gray;
+	/*outline: 1px green solid;*/
+}
+h1{font-size: 22px;	color: #ccc;}
+h2{font-size: 20px;color: #E0A500;}
+h3{margin: 15px 0 15px 0;font-size: 18px;color: #ccc;float: left;}
+p{margin-top: 15px;font-size: 12px;color: #ccc; clear: both;}
+#clear{
+	clear: both;
+}
+#footer{
+	width: 960px;
+	background-color: #383838;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	height: 25px;
+	margin-top: 15px;
+	text-align: center;
+	line-height: 25px;
+	color: #E0A500;
+}
