@@ -32,7 +32,6 @@ class ModelView{
 				   <div id="pageImage">
                     <img src="'.$oModel-> Photopath.'" height="300px" width="600px" alt="" />
 	                </div>
-	                <div id="pluscart"></div> <!-- PLACHOLDER --> 
 	                <div id="clear"></div>
 	                </div> <!-- end of shell -->';
 
