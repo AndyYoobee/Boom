@@ -112,12 +112,12 @@ class Model{
 }
 
 
-/*
-$Test = new Model();
-$Test->load(14);
 
-echo "<pre>";
-print_r($Test);
-echo "</pre>";
-*/
+// $Test = new Model();
+// $Test->load(14);
+
+// echo "<pre>";
+// print_r($Test);
+// echo "</pre>";
+
 ?>

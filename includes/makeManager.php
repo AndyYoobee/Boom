@@ -1,6 +1,6 @@
 <?php
 
-require_once("maker.php");
+require_once("make.php");
 
 
 
@@ -44,14 +44,13 @@ class MakeManager{
 }
 
 
-/*$oMM = new MakeManager();
+//TEST - Passed
 
+// $oMM = new MakeManager();
+// $aAllSubjects = $oMM-> getAllMakes();
 
-$aAllSubjects = $oMM-> getAllMakes();
+// echo "<pre>";
+// print_r($aAllSubjects);
+// echo "</pre>";
 
-
-echo "<pre>";
-print_r($aAllSubjects);
-echo "</pre>";
-*/
 ?>

@@ -90,7 +90,7 @@ h1{font-size: 22px;	color: #ccc;}
 h2{font-size: 20px;color: #E0A500;}
 h3{margin: 15px 0 15px 0;font-size: 18px;color: #ccc;float: left;}
 p{margin-top: 15px;font-size: 12px;color: #ccc; clear: both;}
-#clear{
+.clear{
 	clear: both;
 }
 #footer{

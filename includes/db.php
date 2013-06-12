@@ -15,7 +15,7 @@ When you call the Database_Connection it automatically connects to the DB
 
 ** close_connection ** : This close the Connection with the DB
 
-** query ** : Excute query and return the result set. This result set is meant to be passed in to the fetch_array method
+** query ** : Execute query and return the result set. This result set is meant to be passed in to the fetch_array method
 
 ** fetch_array ** : The result set passed in must be returned from the query() method
 
