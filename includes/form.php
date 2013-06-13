@@ -90,6 +90,8 @@ class Form{
 
 }
 
+/*
+
 $oForm = new Form();
 
 $oForm-> makeInput("text","firstname", "First Name");
@@ -104,5 +106,7 @@ $oForm-> makeSubmit("submit", "Click Me");
 echo "<pre>";
 echo $oForm-> HTML;
 echo "</pre>";
+
+*/
 
 ?>

@@ -11,13 +11,15 @@ class NavigationView{
 
 		$sHTML .= '<ul>';
 
+		$sHTML .= '<li class="nav"><a href="index.php">Home</a>
+                </li>';
 
 		for($i=0; $i<count($aAllMakes); $i++){
 
 			$oCurrentMake = $aAllMakes[$i];
 			$aModels = $oCurrentMake-> Models;
 
-			$sHTML .= '<li><a href="index.php?MakeID='.$oCurrentMake->MakeID.'">' .$oCurrentMake-> MakeName. '</a></li>';
+			$sHTML .= '<li class="nav"><a href="index.php?MakeID='.$oCurrentMake->MakeID.'">' .$oCurrentMake-> MakeName. '</a></li>';
 		}
 
 		$sHTML .= '</ul>';
