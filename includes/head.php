@@ -2,9 +2,11 @@
 
   require_once("navigationView.php");
   require_once("makeManager.php");
+  // require_once("form.php");
 
   $oNV = new NavigationView();
   $oMM = new MakeManager();
+
 
   $oAllMakes = $oMM->getAllMakes();
 
@@ -18,9 +20,11 @@
     <body>
       <div id="container">
             <div id="login">
+               
                 <ul>
+
                 <li class="login"><a href="">Login</a>
-                <li class="login"><a href="">Register</a>
+                <li class="login"><a href="register.php">Register</a>
                 </ul>
 
             </div>

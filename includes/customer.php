@@ -63,14 +63,14 @@ class Customer{
 			case "Email":
 				$this-> sEmail = $_Value;
 				break;
-			case "Username":
+			case "UserName":
 				$this-> sUserName = $_Value;
 				break;
 			case "Password":
 				$this-> sPassword = $_Value;
 				break;
 			default:
-				die($_Property. " is not allowed to write to (Search the issue in the setter");
+				die($_Property. " is not allowed to write to (issue in customer setter");
 
 
 		}
