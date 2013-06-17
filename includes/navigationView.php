@@ -19,7 +19,7 @@ class NavigationView{
 			$oCurrentMake = $aAllMakes[$i];
 			$aModels = $oCurrentMake-> Models;
 
-			$sHTML .= '<li class="nav"><a href="index.php?MakeID='.$oCurrentMake->MakeID.'">' .$oCurrentMake-> MakeName. '</a></li>';
+			$sHTML .= '<li class="nav"><a href="browse.php?MakeID='.$oCurrentMake->MakeID.'">' .$oCurrentMake-> MakeName. '</a></li>';
 		}
 
 		$sHTML .= '</ul>';

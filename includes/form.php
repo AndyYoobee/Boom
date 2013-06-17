@@ -167,6 +167,17 @@ class Form{
 
 
 
+	public function raiseCustomError($sControlName,$sMessage){
+
+		$this-> aErrors[$sControlName] = $sMessage;
+
+
+	}
+
+
+
+
+
 
 
 

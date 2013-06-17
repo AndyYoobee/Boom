@@ -2,5 +2,5 @@
         <div id="footer">
             All rights Reserved &copy; 2013
         </div>
-    </body>
+    </body> 
 </html>

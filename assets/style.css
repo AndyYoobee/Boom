@@ -12,7 +12,7 @@ body{
 #container{
 	max-width: 1260px;
 	background-color: #fffcf6;
-	margin: auto;
+	margin: auto; 
 	/*outline: 1px red solid;*/
 }
 #login{
@@ -217,7 +217,7 @@ p{margin-top: 15px;font-size: 12px;color: #444444; }
 	color: white;
 	font-size: 17px;
 	letter-spacing: 1px;
-	
+	cursor: pointer;
 	clear: both;
 }
 form{	
@@ -226,4 +226,20 @@ form{
 	margin: auto;
 
 }
+#shellhome {
+	position: relative;
+	width: 850px;
+	height: 498px;
+	text-align: center;
+	margin: auto;
+	/*outline: 1px red solid;*/
+	background: url("img/Home.jpg");
+}
+#homecontent p{
+	width: 850px;
+		font-size: 17px;
+	color: #444;
+	text-align: center;
+	margin: auto;
 
+}

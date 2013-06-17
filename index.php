@@ -1,20 +1,19 @@
 <?php 
 require_once("includes/head.php");
-require_once("includes/makeView.php");
-require_once("includes/make.php");
 
-$oMV = new makeView();
 
-$iMakeID = 1; //default load page
+$sHTML = "";
+$sHTML .= '<div id="title">Welcome</div>
+		   <div id="shellhome">
+                      
+		   </div> <!-- end of shell -->
+		   <div id="homecontent">
+		   <p> Welcome to (Business Name). This is placement text for a description of our business and what we do. short and sweet. And just keeps going for a little while longer, just so you know what we are about. :) .</p>
+	       </div>';
 
-if(isset($_GET["MakeID"])){
-    $iMakeID = $_GET["MakeID"];
-}
+echo $sHTML;
 
-$oCurrentMake = new Make();
-$oCurrentMake->load($iMakeID);
 
-echo $oMV->render($oCurrentMake);
 
 
 require_once("includes/footer.php");

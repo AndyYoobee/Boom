@@ -1,7 +1,7 @@
 <?php 
 
   require_once("navigationView.php");
-  require_once("makeManager.php");
+  require_once("makeManager.php"); 
   // require_once("form.php");
 
   $oNV = new NavigationView();
@@ -23,7 +23,7 @@
                
                 <ul>
 
-                <li class="login"><a href="">Login</a>
+                <li class="login"><a href="login.php">Login</a>
                 <li class="login"><a href="register.php">Register</a>
                 </ul>
 

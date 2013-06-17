@@ -1,6 +1,7 @@
 <?php
 
 require_once("db.php");
+require_once("form.php");
 
 class Customer{
 
@@ -47,6 +48,101 @@ class Customer{
 
 
 	}
+	//precon: ID to load must exist
+	public function load($iCustomerID){
+
+		$oDatabase = new Database_Connection();
+
+		$sQuery = " 
+				SELECT CustomerID, FirstName, LastName, Telephone, Email, UserName, Password, Credit
+				FROM tbcustomer
+				WHERE CustomerID=" .$iCustomerID;
+
+		$oResult = $oDatabase-> query($sQuery);
+		$aCustomer = $oDatabase-> fetch_array($oResult);
+
+		$this-> iCustomerID = $aCustomer["CustomerID"];
+		$this-> sFirstName = $aCustomer["FirstName"];
+		$this-> sLastName = $aCustomer["LastName"];
+		$this-> iTelephone = $aCustomer["Telephone"];
+		$this-> sEmail = $aCustomer["Email"];
+		$this-> sUserName = $aCustomer["UserName"];
+		$this-> sPassword = $aCustomer["Password"];
+		$this-> iCredit = $aCustomer["Credit"];
+
+
+		$oDatabase-> close_connection();
+
+	}
+
+
+	//username does not have to exist
+	public function loadByUserName($sUserName){
+
+		$oDatabase = new Database_Connection();
+
+		$sQuery = "
+				SELECT CustomerID
+				FROM tbcustomer
+				WHERE UserName= '".$sUserName."'";
+				
+				
+
+		$oResult = $oDatabase-> query($sQuery);
+		$aCustomerInfo = $oDatabase-> fetch_array($oResult);
+		$oDatabase-> close_connection();
+		
+
+		if($aCustomerInfo != false){
+			$this->load($aCustomerInfo["CustomerID"]);
+			
+			return true;
+
+		}else{
+
+			return false;
+		}
+
+		
+	}
+
+
+
+
+
+	public function __get($_Property){
+
+		switch ($_Property){
+			case "CustomerID":
+				return $this-> iCustomerID;
+				break;
+			case "FirstName":
+				return $this-> sFirstName;
+				break;
+			case "LastName":
+				return $this-> sLastName;
+				break;
+			case "Telephone":
+				return $this-> iTelephone;
+				break;
+			case "Email":
+				return $this-> sEmail;
+				break;
+			case "UserName":
+				return $this-> sUserName;
+				break;
+			case "Password":
+				return $this-> sPassword;
+				break;
+			case "Credit":
+				return $this-> iCredit;
+				break;
+			default:
+				die($_Property ." is not allowed to read from");
+		}
+
+
+	}
 
 	public function __set($_Property, $_Value){
 
@@ -78,6 +174,19 @@ class Customer{
 
 
 }
+
+
+
+/*
+$oCustomer = new Customer();
+$oCustomer-> loadByUserName("bobby");
+
+
+echo "<pre>";
+print_r($oCustomer);
+echo "</pre>";
+*/
+
 
 /*
 

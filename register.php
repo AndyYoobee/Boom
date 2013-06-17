@@ -17,9 +17,14 @@ if(isset($_POST["submit"])){
 	$oForm->checkEmpty("username");
 	$oForm->checkEmpty("password");
 	
-	// echo '<pre>';
-	// print_r($_POST);
-	// echo '</pre>';
+	$oTestCustomer = new Customer();
+
+	$bLoadResult = $oTestCustomer->loadByUserName($_POST["username"]);
+	if ($bLoadResult == true){
+		$oForm->raiseCustomError("username","Username has already been taken"); 
+	}
+
+
 
 
 	if($oForm->Validation == true){
