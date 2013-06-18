@@ -37,7 +37,8 @@ if(isset($_POST["submit"])){
 		$oCustomer->Password = $_POST["password"];
 		$oCustomer->save();
 
-		header("location:index.php");
+		// $_SESSION["CurrentID"]=$oCustomer->CustomerID;//uncomment this to auto log in once registered.
+		header("location:CustomerDetails.php");
 		exit;
 	}
 
@@ -45,7 +46,7 @@ if(isset($_POST["submit"])){
 
 }
 
-
+echo '<div id="title">Register</div>';
 $oForm-> makeInput("text","firstname", "First Name");
 $oForm-> makeInput("text","lastname", "Last Name");
 $oForm-> makeInputTelephone("telephone", "Phone Number");

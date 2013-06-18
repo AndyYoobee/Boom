@@ -29,7 +29,10 @@ if(isset($_POST["submit"])){
 		if($oTestUser->Password != $_POST["password"]){
 			$oForm->raiseCustomError("password","Password is incorrect");
 		}else{
-			header("location:index.php"); //change later to the members index page!!!
+
+			$_SESSION["CurrentID"] = $oTestUser->CustomerID;
+
+			header("location:CustomerDetails.php"); //change later to the members index page!!!
 			exit;
 		}
 	}
@@ -40,7 +43,7 @@ if(isset($_POST["submit"])){
 		//else, redirect to homepage
 }
 
-
+echo '<div id="title">Login</div>';
 $oForm-> makeInput("text","username", "User Name");
 $oForm-> makeInput("password","password", "Password");
 $oForm-> makeSubmit("submit", "Login");

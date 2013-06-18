@@ -44,6 +44,8 @@ class Customer{
 		
 		$oResult = $oDatabase-> query($sQuery);
 
+		$this->iCustomerID = $oDatabase->get_insert_id(); //when registering it logs in automatically w/ session in register.php
+
 		$oDatabase-> close_connection();
 
 
@@ -128,7 +130,7 @@ class Customer{
 			case "Email":
 				return $this-> sEmail;
 				break;
-			case "UserName":
+			case "UserName": 
 				return $this-> sUserName;
 				break;
 			case "Password":

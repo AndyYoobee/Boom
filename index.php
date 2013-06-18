@@ -18,4 +18,12 @@ echo $sHTML;
 
 require_once("includes/footer.php");
 
+
+
+// echo "<pre>";
+// print_r($_SESSION);
+// echo "</pre>";
+
+
  ?>
+

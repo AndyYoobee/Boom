@@ -1,5 +1,5 @@
 <?php 
-
+  
   require_once("navigationView.php");
   require_once("makeManager.php"); 
   // require_once("form.php");
@@ -9,8 +9,9 @@
 
 
   $oAllMakes = $oMM->getAllMakes();
-
+  session_start();
  ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
     <head>
@@ -23,8 +24,16 @@
                
                 <ul>
 
-                <li class="login"><a href="login.php">Login</a>
-                <li class="login"><a href="register.php">Register</a>
+
+                  <?php 
+                  if(isset($_SESSION["CurrentID"])){
+                    echo '<li class="login"><a href="CustomerDetails.php">My Details</a>';
+                    echo '<li class="login"><a href="logout.php">Log Out</a>';
+                  }else{
+                    echo '<li class="login"><a href="login.php">Login</a>
+                    <li class="login"><a href="register.php">Register</a>';                  
+                  } 
+                  ?>
                 </ul>
 
             </div>
@@ -34,6 +43,6 @@
                 <?php echo $oNV->render($oAllMakes); ?>
             
                 </div> <!-- end of navigation -->
-
+          
             
             <div id="main">

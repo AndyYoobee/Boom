@@ -19,4 +19,8 @@ echo $oMV->render($oCurrentMake);
 
 require_once("includes/footer.php");
 
+// echo "<pre>";
+// print_r($_SESSION);
+// echo "</pre>";
+
  ?>

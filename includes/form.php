@@ -37,7 +37,7 @@ class Form{
 
 
 	public function __construct(){
-
+		
 		$this-> sHTML = '<form action="" method="post">';
 		$this-> aData = array();
 		$this-> aErrors = array();

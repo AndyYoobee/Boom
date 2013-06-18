@@ -63,7 +63,14 @@ class Database_Connection{
         
         return $resResult->fetch_array(MYSQLI_ASSOC);
         
-    }  
+    } 
+
+    //this method returns the last auto-increment number
+    public function get_insert_id(){
+
+        return $this->sqliConnection->insert_id;
+
+    }     
 
 }
 
