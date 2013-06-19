@@ -37,7 +37,7 @@ if(isset($_POST["submit"])){
 		$oCustomer->Password = $_POST["password"];
 		$oCustomer->save();
 
-		// $_SESSION["CurrentID"]=$oCustomer->CustomerID;//uncomment this to auto log in once registered.
+		///$_SESSION["CurrentID"]=$oCustomer->CustomerID;//uncomment this to auto log in once registered.
 		header("location:CustomerDetails.php");
 		exit;
 	}

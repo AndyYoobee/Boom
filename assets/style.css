@@ -165,21 +165,23 @@ p{margin-top: 15px;font-size: 12px;color: #444444; }
 	height: 25px;
 	color: #444;
 }
-
+form{
+	/*outline: 1px green solid;*/
+	
+	margin:auto;
+	margin-left: 250px;
+}
 .form {
 	width: 200px;
 	height: 20px;
-	/*outline: 1px green solid;*/
-	margin: 0 0 15px 0;
+	/*outline: 1px yellow solid;*/
+	margin: 0 0 15px 15px;
 	float: left;
-/*	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;*/
 	border-radius: 5px;
-	/*box-shadow: 0px 0px 1px #444*/
-	/*border: 1px red solid;*/
 	text-indent: 3px;
 
 }
+
 #main>form>label{
 	width: 150px;
 	color: #444;
@@ -191,12 +193,13 @@ p{margin-top: 15px;font-size: 12px;color: #444444; }
 	/*outline: 1px red solid;*/
 	float: left;
 	clear: both;
+	/*margin-left: 100px;*/
 }
 .error{
 	display: block;
 	margin-left: 15px;
 	/*outline: 1px blue solid;*/
-	width: 250px;
+	
 	height: 26px;
 	line-height: 26px;
 	color: red;
@@ -208,7 +211,7 @@ p{margin-top: 15px;font-size: 12px;color: #444444; }
 	/*outline: 1px blue solid;*/
 
 	width: 200px;
-	margin-left: 150px;	
+	margin-left: 165px;	
 	margin-bottom: 50px;
 	margin-top: 15px;
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffa71c), to(#d38913));
@@ -222,10 +225,7 @@ p{margin-top: 15px;font-size: 12px;color: #444444; }
 	cursor: pointer;
 	clear: both;
 }
-form{	
-	/*outline: 1px red solid;*/
-	width: 640px;
-	margin: auto;
+
 
 }
 #shellhome {

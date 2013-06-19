@@ -31,6 +31,8 @@ class Customer{
 
 		$oDatabase = new Database_Connection();
 
+		if($this-> iCustomerID == 0){
+
 		$sQuery = "
 				INSERT INTO tbcustomer (FirstName, LastName, Telephone, Email, Username, Password)
 				VALUES (
@@ -46,10 +48,27 @@ class Customer{
 
 		$this->iCustomerID = $oDatabase->get_insert_id(); //when registering it logs in automatically w/ session in register.php
 
+        } else{
+
+        	$sQuery = " 
+        			UPDATE tbcustomer
+				    SET FirstName = '" .$this-> sFirstName."',
+				      	LastName = '" .$this-> sLastName."',
+				      	Telephone = '" .$this-> iTelephone."',
+				      	Email ='" .$this-> sEmail."'
+				    WHERE CustomerID = " .$this-> iCustomerID;
+
+			$oResult = $oDatabase-> query($sQuery);
+	
+
+        }
+
 		$oDatabase-> close_connection();
 
 
 	}
+
+
 	//precon: ID to load must exist
 	public function load($iCustomerID){
 

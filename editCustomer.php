@@ -20,6 +20,31 @@ $aData["telephone"] = $oCustomer->Telephone;
 $aData["email"] = $oCustomer->Email;
 $oForm->Data = $aData;
 
+
+
+if(isset($_POST["submit"])){
+	$oForm->Data = $_POST;
+
+	$oForm-> checkEmpty("firstname");
+	$oForm-> checkEmpty("lastname");
+	$oForm-> checkEmpty("telephone");
+	$oForm-> checkEmpty("email");
+
+
+	if($oForm-> Validation == true){
+
+		$oCustomer-> FirstName = $_POST["firstname"];
+		$oCustomer-> LastName = $_POST["lastname"];
+		$oCustomer-> Telephone = $_POST["telephone"];
+		$oCustomer-> Email = $_POST["email"];
+		$oCustomer-> save();//always update
+
+		header("location:CustomerDetails.php");
+		exit;
+	}
+
+}
+
 //when the form is submitted
 
 //validate the input, if all is corectthen 
