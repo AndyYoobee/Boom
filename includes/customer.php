@@ -30,39 +30,39 @@ class Customer{
 	public function save(){
 
 		$oDatabase = new Database_Connection();
-
+		//if the customer has no ID
 		if($this-> iCustomerID == 0){
-
+		//it creates this query to make a new customer.
 		$sQuery = "
 				INSERT INTO tbcustomer (FirstName, LastName, Telephone, Email, Username, Password)
 				VALUES (
-						'".$this-> sFirstName."',
-						'".$this-> sLastName."',
-						'".$this-> iTelephone."',
-						'".$this-> sEmail."',
-						'".$this-> sUserName."',
-						'".$this-> sPassword."'
+						'".$oDatabase->escape_value($this-> sFirstName)."',
+						'".$oDatabase->escape_value($this-> sLastName)."',
+						'".$oDatabase->escape_value($this-> iTelephone)."',
+						'".$oDatabase->escape_value($this-> sEmail)."',
+						'".$oDatabase->escape_value($this-> sUserName)."',
+						'".$oDatabase->escape_value($this-> sPassword)."'
 						)";
 		
 		$oResult = $oDatabase-> query($sQuery);
 
 		$this->iCustomerID = $oDatabase->get_insert_id(); //when registering it logs in automatically w/ session in register.php
-
+		//otherwise it updates the customer already in existance.
         } else{
 
         	$sQuery = " 
         			UPDATE tbcustomer
-				    SET FirstName = '" .$this-> sFirstName."',
-				      	LastName = '" .$this-> sLastName."',
-				      	Telephone = '" .$this-> iTelephone."',
-				      	Email ='" .$this-> sEmail."'
+				    SET FirstName = '".$oDatabase->escape_value($this-> sFirstName)."',
+				      	LastName = '" .$oDatabase->escape_value($this-> sLastName)."',
+				      	Telephone = '" .$oDatabase->escape_value($this-> iTelephone)."',
+				      	Email ='" .$oDatabase->escape_value($this-> sEmail)."'
 				    WHERE CustomerID = " .$this-> iCustomerID;
 
 			$oResult = $oDatabase-> query($sQuery);
-	
+		
 
         }
-
+        //close connection.
 		$oDatabase-> close_connection();
 
 
@@ -105,7 +105,7 @@ class Customer{
 		$sQuery = "
 				SELECT CustomerID
 				FROM tbcustomer
-				WHERE UserName= '".$sUserName."'";
+				WHERE UserName= '".$oDatabase->escape_value($sUserName)."'";
 				
 				
 
@@ -169,22 +169,22 @@ class Customer{
 
 		switch ($_Property){
 			case "FirstName":
-				$this-> sFirstName = $_Value;
+				$this-> sFirstName = $oDatabase->escape_value($_Value);
 				break;
 			case "LastName":
-				$this-> sLastName = $_Value;
+				$this-> sLastName = $oDatabase->escape_value($_Value);
 				break;
 			case "Telephone":
-				$this-> iTelephone = $_Value;
+				$this-> iTelephone = $oDatabase->escape_value($_Value);
 				break;
 			case "Email":
-				$this-> sEmail = $_Value;
+				$this-> sEmail = $oDatabase->escape_value($_Value);
 				break;
 			case "UserName":
-				$this-> sUserName = $_Value;
+				$this-> sUserName = $oDatabase->escape_value($_Value);
 				break;
 			case "Password":
-				$this-> sPassword = $_Value;
+				$this-> sPassword = $oDatabase->escape_value($_Value);
 				break;
 			default:
 				die($_Property. " is not allowed to write to (issue in customer setter");

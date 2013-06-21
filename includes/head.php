@@ -2,6 +2,7 @@
   
   require_once("navigationView.php");
   require_once("makeManager.php"); 
+  require_once("cart.php");
   // require_once("form.php");
 
   $oNV = new NavigationView();
@@ -27,6 +28,7 @@
 
                   <?php 
                   if(isset($_SESSION["CurrentID"])){
+                    echo '<li class="login"><a href="mycart.php">My Cart</a>';
                     echo '<li class="login"><a href="CustomerDetails.php">My Details</a>';
                     echo '<li class="login"><a href="logout.php">Log Out</a>';
                   }else{
@@ -37,7 +39,7 @@
                 </ul>
 
             </div>
-            <div id="logo"><a href="">Logo</a></div>
+            <div id="logo"><a href="index.php"><img src="assets/img/logo2.png" width="269px" height="180px"/></a></div>
             <div id="navigation">
                 
                 <?php echo $oNV->render($oAllMakes); ?>

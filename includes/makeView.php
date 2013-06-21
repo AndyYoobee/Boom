@@ -41,7 +41,7 @@ class MakeView{
                        <p>'.$oModel-> Description.'</p>
                        </div><!-- end of page content -->
 
-                       <a href="">Add To Cart</a>
+                       <a href="add.php?ModelID='.$oModel-> ModelID.'">Add To Cart</a>
                        
                        </div> <!-- end of shell -->';
 		}

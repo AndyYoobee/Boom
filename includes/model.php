@@ -82,7 +82,7 @@ class Model{
 
 		switch ($sProperty){
 
-			case "ModelId":
+			case "ModelID":
 				return $this-> iModelID;
 				break;
 			case "ModelName":

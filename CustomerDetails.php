@@ -24,6 +24,7 @@ echo $oCV->render($oCustomer);
 
 
 
+
 // print_r($oCustomer);
 
 // print_r($_SESSION[]);

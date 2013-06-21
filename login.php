@@ -32,6 +32,12 @@ if(isset($_POST["submit"])){
 
 			$_SESSION["CurrentID"] = $oTestUser->CustomerID;
 
+			$oCart = new Cart();
+			
+			$_SESSION["cart"]= $oCart;
+
+			
+
 			header("location:CustomerDetails.php"); //change later to the members index page!!!
 			exit;
 		}
