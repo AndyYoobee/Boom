@@ -20,13 +20,13 @@ class CustomerView{
                     <div id="details">
 
                 
-                    <h3>User Name:</h3><p>'.$oCustomer->UserName.'</p>
-                    <h3>First Name:</h3><p>'.$oCustomer->FirstName.'</p>
-                    <h3>Last Name:</h3><p>'.$oCustomer->LastName.'</p>
-                    <h3>Email:</h3><p>'.$oCustomer->Email.'</p>
-                    <h3>Telephone:</h3><p>'.$oCustomer->Telephone.'</p>
+                    <h3>User Name:</h3><p>'.htmlentities($oCustomer->UserName).'</p>
+                    <h3>First Name:</h3><p>'.htmlentities($oCustomer->FirstName).'</p>
+                    <h3>Last Name:</h3><p>'.htmlentities($oCustomer->LastName).'</p>
+                    <h3>Email:</h3><p>'.htmlentities($oCustomer->Email).'</p>
+                    <h3>Telephone:</h3><p>'.htmlentities($oCustomer->Telephone).'</p>
 
-                    <a href="editCustomer.php">Edit</a>
+                    <a href="editcustomer.php">Edit</a>
                    
                      </div>';
 

@@ -13,6 +13,7 @@ class Customer{
 	private $sUserName;
 	private $sPassword;
 	private $iCredit;
+	private $iAdmin;
 
 	public function __construct(){
 
@@ -24,6 +25,7 @@ class Customer{
 		$this-> sUserName = "";
 		$this-> sPassword = "";
 		$this-> iCredit = 0;
+		$this-> iAdmin = 0;
 
 	}
 
@@ -75,7 +77,7 @@ class Customer{
 		$oDatabase = new Database_Connection();
 
 		$sQuery = " 
-				SELECT CustomerID, FirstName, LastName, Telephone, Email, UserName, Password, Credit
+				SELECT CustomerID, FirstName, LastName, Telephone, Email, UserName, Password, Credit, Admin
 				FROM tbcustomer
 				WHERE CustomerID=" .$iCustomerID;
 
@@ -90,6 +92,7 @@ class Customer{
 		$this-> sUserName = $aCustomer["UserName"];
 		$this-> sPassword = $aCustomer["Password"];
 		$this-> iCredit = $aCustomer["Credit"];
+		$this-> iAdmin = $aCustomer["Admin"];
 
 
 		$oDatabase-> close_connection();
@@ -158,6 +161,9 @@ class Customer{
 			case "Credit":
 				return $this-> iCredit;
 				break;
+			case "Admin":
+				return $this-> iAdmin;
+				break;
 			default:
 				die($_Property ." is not allowed to read from");
 		}
@@ -169,22 +175,22 @@ class Customer{
 
 		switch ($_Property){
 			case "FirstName":
-				$this-> sFirstName = $oDatabase->escape_value($_Value);
+				$this-> sFirstName = $_Value;
 				break;
 			case "LastName":
-				$this-> sLastName = $oDatabase->escape_value($_Value);
+				$this-> sLastName = $_Value;
 				break;
 			case "Telephone":
-				$this-> iTelephone = $oDatabase->escape_value($_Value);
+				$this-> iTelephone = $_Value;
 				break;
 			case "Email":
-				$this-> sEmail = $oDatabase->escape_value($_Value);
+				$this-> sEmail = $_Value;
 				break;
 			case "UserName":
-				$this-> sUserName = $oDatabase->escape_value($_Value);
+				$this-> sUserName = $_Value;
 				break;
 			case "Password":
-				$this-> sPassword = $oDatabase->escape_value($_Value);
+				$this-> sPassword = $_Value;
 				break;
 			default:
 				die($_Property. " is not allowed to write to (issue in customer setter");

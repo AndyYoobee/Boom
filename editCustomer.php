@@ -1,7 +1,7 @@
 <?php 
 require_once("includes/head.php");
 require_once("includes/form.php");
-require_once("includes/Customer.php");
+require_once("includes/customer.php");
 
 if(!isset($_SESSION["CurrentID"])){
 	header("location:login.php");
@@ -21,24 +21,24 @@ $aData["email"] = $oCustomer->Email;
 $oForm->Data = $aData;
 
 
-
+// When the submit button is hit.
 if(isset($_POST["submit"])){
 	$oForm->Data = $_POST;
-
+//check to see if the data is not empty
 	$oForm-> checkEmpty("firstname");
 	$oForm-> checkEmpty("lastname");
 	$oForm-> checkEmpty("telephone");
 	$oForm-> checkEmpty("email");
 
-
+//if the data is not empty and filled out
 	if($oForm-> Validation == true){
-
+//then update these forms to the new details.
 		$oCustomer-> FirstName = $_POST["firstname"];
 		$oCustomer-> LastName = $_POST["lastname"];
 		$oCustomer-> Telephone = $_POST["telephone"];
 		$oCustomer-> Email = $_POST["email"];
 		$oCustomer-> save();//always update
-
+//when done exit back to the customer's details.
 		header("location:CustomerDetails.php");
 		exit;
 	}

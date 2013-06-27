@@ -1,6 +1,6 @@
 <?php 
 
-require_once("makeManager.php");
+require_once("makemanager.php");
 
 class NavigationView{
 	

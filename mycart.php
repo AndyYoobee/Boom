@@ -2,7 +2,7 @@
 
 require_once("includes/head.php");
 require_once("includes/model.php");
-require_once("includes/cartView.php");
+require_once("includes/cartview.php");
 
 if(!isset($_SESSION["CurrentID"])){
 	header("location:login.php");
@@ -13,7 +13,6 @@ $oCurrentCart = $_SESSION["cart"];
 $oCartView = new CartView();
 
 echo $oCartView-> render($oCurrentCart);
-
 
 
 

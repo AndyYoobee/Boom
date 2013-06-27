@@ -1,8 +1,8 @@
 <?php
 define("HOST", "localhost");
-define("USER_NAME", "root");
-define("PASSWORD", "");
-define("DB_NAME", "shoppingforcars");
+define("USER_NAME", "root"); //remote database admin username  root "dennisbe_tester"
+define("PASSWORD", ""); //remote database admin password. "tester1"
+define("DB_NAME", "shoppingforcars"); //change depending on the remote database name shoppingforcars "dennisbe_test"
 
 //This class represents the database connection to mysql db
 
@@ -27,7 +27,7 @@ class Database_Connection{
     public function __construct(){
         
         //establish connection to database using db-specific driver
-        $this->sqliConnection = new mysqli(HOST,USER_NAME, PASSWORD, DB_NAME);
+        $this->sqliConnection = new mysqli(HOST,USER_NAME,PASSWORD, DB_NAME);
     
         if($this->sqliConnection->connect_error){
         
@@ -75,7 +75,7 @@ class Database_Connection{
 
 
     //method for filtering input and output
-    public function escape_value( $value ) {
+    public function escape_value($value){
 
         $magic_quotes_active = get_magic_quotes_gpc();
         $new_enough_php = function_exists( "mysqli_real_escape_string" ); // i.e. PHP >= v4.3.0

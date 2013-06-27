@@ -1,6 +1,6 @@
 <?php 
 require_once("includes/head.php");
-require_once("includes/makeView.php");
+require_once("includes/makeview.php");
 require_once("includes/make.php");
 
 $oMV = new makeView();

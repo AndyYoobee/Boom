@@ -3,6 +3,8 @@
 require_once("includes/head.php");
 require_once("includes/form.php");
 require_once("includes/customer.php");
+require_once("includes/class.phpmailer.php");
+require_once("includes/encoder.php");
 
 $oForm = new Form();
 
@@ -34,11 +36,33 @@ if(isset($_POST["submit"])){
 		$oCustomer->Telephone = $_POST["telephone"];
 		$oCustomer->Email = $_POST["email"];
 		$oCustomer->UserName = $_POST["username"];
-		$oCustomer->Password = $_POST["password"];
+		$oCustomer->Password = Encoder::encode($_POST["password"]);
 		$oCustomer->save();
 
-		///$_SESSION["CurrentID"]=$oCustomer->CustomerID;//uncomment this to auto log in once registered.
-		header("location:CustomerDetails.php");
+		//Create a new PHPMailer instance
+		$mail = new PHPMailer();
+		//Set who the message is to be sent from
+		$mail->SetFrom('admin@gt.com', 'GT Cars');
+		//Set an alternative reply-to address
+		$mail->AddReplyTo('replyto@example.com','First Last');
+		//Set who the message is to be sent to
+		$mail->AddAddress($_POST["email"], $_POST["firstname"]. $_POST["lastname"]);
+		//Set the subject line
+		$mail->Subject = 'Thank you for registering';
+		// //Read an HTML message body from an external file, convert referenced images to embedded, convert HTML into a basic plain-text alternative body
+		$mail->MsgHTML('Hi');
+		//Replace the plain text body with one created manually
+		$mail->AltBody = 'Thank you for registering at GT cars.';
+
+
+		//Send the message, check for errors
+		if(!$mail->Send()) {
+		  die("Mailer Error: " . $mail->ErrorInfo);
+		} 
+
+		$_SESSION["CurrentID"]=$oCustomer->CustomerID;//uncomment this to auto log in once registered.
+		$_SESSION["cart"] = new Cart();
+		header("location:customerdetails.php"); //if not using ^, then change the location.
 		exit;
 	}
 

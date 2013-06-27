@@ -1,7 +1,7 @@
 <?php 
 require_once("includes/head.php");
-require_once("includes/CustomerView.php");
-require_once("includes/Customer.php");
+require_once("includes/customerview.php");
+require_once("includes/customer.php");
 if(!isset($_SESSION["CurrentID"])){
 	header("location:login.php");
 	exit;
@@ -16,7 +16,6 @@ $oCustomer = new Customer();
 $oCustomer->load($iCurrentID);
 
 echo $oCV->render($oCustomer);
-
 
 
 

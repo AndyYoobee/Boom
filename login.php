@@ -2,6 +2,7 @@
 require_once("includes/head.php");
 require_once("includes/form.php");
 require_once("includes/customer.php");
+require_once("includes/encoder.php");
 
 
 
@@ -26,19 +27,18 @@ if(isset($_POST["submit"])){
 		//$oDatabase = new Database_Connection();
 
 
-		if($oTestUser->Password != $_POST["password"]){
+		if($oTestUser->Password != Encoder::encode($_POST["password"])){
 			$oForm->raiseCustomError("password","Password is incorrect");
 		}else{
 
 			$_SESSION["CurrentID"] = $oTestUser->CustomerID;
 
 			$oCart = new Cart();
-			
+			// $oCart->add(14,4);
+			// $oCart->add(13,2);
 			$_SESSION["cart"]= $oCart;
 
-			
-
-			header("location:CustomerDetails.php"); //change later to the members index page!!!
+			header("location:customerdetails.php"); //change later to the members index page!!!
 			exit;
 		}
 	}
